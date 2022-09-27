@@ -49,7 +49,7 @@ class LoginInstance extends State<Login> {
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w500,
-                        fontSize: 30,
+                        fontSize: 100,
                       ),
                     )
                   ),
