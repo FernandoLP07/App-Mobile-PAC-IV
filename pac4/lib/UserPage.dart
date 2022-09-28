@@ -24,7 +24,7 @@ class UserPage extends StatelessWidget{
                   alignment: Alignment.center,
                   padding: const EdgeInsets.all(10),
                   child: const Text(
-                    "MyMeal",
+                    "Historico de gastos",
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w500,
@@ -38,7 +38,7 @@ class UserPage extends StatelessWidget{
                 alignment: Alignment.topLeft,
                 padding: const EdgeInsets.all(10),
                 child: const Text(
-                  "NOME DO USUÁRIO: Nome do Usuário",
+                  "NOME DO USUÁRIO",
                   style: TextStyle(fontSize: 20),
                 ),
               ),
