@@ -3,6 +3,9 @@ import 'UserPage.dart';
 import 'HelpPage.dart';
 import 'AdminPage.dart';
 
+//https://www.youtube.com/watch?v=_hJsBUUWDmc&ab_channel=FelipeCasseb
+//Esconder senha
+
 class Login extends StatefulWidget{
   const Login({Key? key}) : super(key: key);
 
@@ -14,6 +17,8 @@ class LoginInstance extends State<Login> {
 
   final userController = TextEditingController();
   final passwordController = TextEditingController();
+  bool obscureText = true;
+  IconData iconPassword = Icons.visibility;
 
   @override
   void dispose(){
@@ -27,11 +32,11 @@ class LoginInstance extends State<Login> {
     return Scaffold(
       appBar: AppBar(
           centerTitle: false,
-          title: const Text("PAC IV"),
+          title: const Text("MYMEAL"),
           backgroundColor: Colors.yellow,
           leading: Padding(
             padding: const EdgeInsets.fromLTRB(0,5,0,5),
-              child: Image.asset('logo_sem_preto.png')),
+              child: Image.asset('claco.jpg')),
       ),
       body: Center(
         child:
@@ -39,17 +44,17 @@ class LoginInstance extends State<Login> {
               padding: const EdgeInsets.all(10),
               child: ListView(
                 children: [
-
+                  Image.asset('logo_fundo.png', width: 400, height: 250,),
                   //TÍTULO GRANDÃO
                   Container(
                     alignment: Alignment.center,
                     padding: const EdgeInsets.all(10),
-                    child: const Text(
+                    /*child: const Text(
                       "MyMeal",
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w500,
-                        fontSize: 100,
+                        fontSize: 80,
                       ),
                     )
                   ),
@@ -59,9 +64,9 @@ class LoginInstance extends State<Login> {
                     alignment: Alignment.center,
                     padding: const EdgeInsets.all(10),
                     child: const Text(
-                      "Login",
+                      "MYMEAL",
                       style: TextStyle(fontSize: 20),
-                    ),
+                    ),*/
                   ),
 
                   //ENTRADA USUÁRIO
@@ -81,10 +86,28 @@ class LoginInstance extends State<Login> {
                   Container(
                     padding: const EdgeInsets.all(10),
                     child: TextField(
+                      obscureText: obscureText,
                       controller: passwordController,
-                      decoration: const InputDecoration(
+                      decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: "Senha",
+                        prefixIcon: Icon(Icons.password),
+                       suffixIcon: IconButton(
+                           onPressed:(){
+                             if(obscureText == true) {
+                               setState(() {
+                                 obscureText = false;
+                                 iconPassword = Icons.visibility_off;
+                               });
+                             }else{
+                               setState(() {
+                                 obscureText = true;
+                                 iconPassword = Icons.visibility;
+                               });
+                             }
+                           },
+                         icon: Icon(iconPassword),
+                       )
                       ),
                     ),
                   ),
